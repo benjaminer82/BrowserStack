@@ -21,7 +21,9 @@ try:
     driver.get("https://bstackdemo.com/")
     WebDriverWait(driver, 10).until(EC.title_contains("StackDemo"))
 
-    assert EC.title_is('StackDemo2')
+    assert EC.title_is('SDemo2')
+
+
     # Get text of a product - iPhone 12
     item_on_page =  WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="1"]/p'))).text
     # Click the 'Add to cart' button if it is visible
@@ -34,6 +36,7 @@ try:
     if item_on_page == item_in_cart:
         # Set the status of test as 'passed' or 'failed' based on the condition; if item is added to cart
         driver.execute_script('browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"passed", "reason": "iPhone 12 has been successfully added to the cart!"}}')
+
 except NoSuchElementException:
     driver.execute_script('browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"failed", "reason": "Some elements failed to load"}}')
 # Stop the driver
