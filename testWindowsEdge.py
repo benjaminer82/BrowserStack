@@ -36,7 +36,7 @@ try:
 
 
     # Click the 'Add to cart' button if it is visible
-#    WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="1"]/div[4]'))).click()
+    WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="2"]/div[4]'))).click()
     # Check if the Cart pane is visible
     WebDriverWait(driver,10).until(EC.visibility_of_element_located((By.CLASS_NAME, "float-cart__content")))
     ## Get text of product in cart
