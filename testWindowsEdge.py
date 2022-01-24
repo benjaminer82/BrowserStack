@@ -20,8 +20,8 @@ driver = webdriver.Remote(
 try:
     driver.get("https://bstackdemo.com/")
     WebDriverWait(driver, 10).until(EC.title_contains("StackDemo"))
-    # Get text of an product - iPhone 12
-    item_on_page =  WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="1"]/p'))).text
+    # Get text of a product - iPhone 12
+    item_on_page =  WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="100"]/p'))).text
     # Click the 'Add to cart' button if it is visible
     WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="1"]/div[4]'))).click()
     # Check if the Cart pane is visible

@@ -16,7 +16,8 @@ desired_cap = {
 }
 driver = webdriver.Remote(
 command_executor='https://kaiwei_a9ewDd:MU9DK7auHeJgzUhkSdBx@hub-cloud.browserstack.com/wd/hub',
-options=webdriver.ChromeOptions())
+desired_capabilities=desired_cap)
+#options=webdriver.ChromeOptions())
 try:
     driver.get("https://bstackdemo.com/")
     WebDriverWait(driver, 10).until(EC.title_contains("StackDemo"))
