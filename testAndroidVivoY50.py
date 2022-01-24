@@ -6,10 +6,11 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 desired_cap = {
- 'browserName': 'Android',
- 'device': 'Samsung Galaxy S21',
- 'realMobile': 'true',
- 'os_version': '11.0',
+ 'os_version': 'XP',
+ 'resolution': '1280x1024',
+ 'browser': 'IE',
+ 'browser_version': '7.0',
+ 'os': 'Windows',
  'name': 'Kai Samsung Galaxy S21 Test', # test name
  'build': 'Samsung Galaxy S21 Test Job' # CI/CD job or build name
 }
