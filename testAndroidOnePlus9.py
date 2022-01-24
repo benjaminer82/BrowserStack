@@ -6,13 +6,12 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 desired_cap = {
- 'os_version': 'Monterey',
- 'resolution': '1920x1080',
- 'browser': 'Chrome',
- 'browser_version': 'latest',
- 'os': 'OS X',
- 'name': 'Kai OSX Test', # test name
- 'build': 'Test Job' # CI/CD job or build name
+ 'browserName': 'Android',
+ 'device': 'OnePlus 9',
+ 'realMobile': 'true',
+ 'os_version': '11.0',
+ 'name': 'Kai OnePlus 9 Test', # test name
+ 'build': 'OnePlus 9 Test Job' # CI/CD job or build name
 }
 driver = webdriver.Remote(
     command_executor='https://kaiwei_a9ewDd:MU9DK7auHeJgzUhkSdBx@hub-cloud.browserstack.com/wd/hub',
