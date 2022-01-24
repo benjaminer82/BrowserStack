@@ -7,11 +7,11 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 desired_cap = {
  'browserName': 'Android',
- 'device': 'Huawei P30',
+ 'device': 'Samsung Galaxy S21',
  'realMobile': 'true',
- 'os_version': '9.0',
- 'name': 'Kai Huawei P30 Test', # test name
- 'build': 'Huawei P30 Test Job' # CI/CD job or build name
+ 'os_version': '11.0',
+ 'name': 'Kai Samsung Galaxy S21 Test', # test name
+ 'build': 'Samsung Galaxy S21 Test Job' # CI/CD job or build name
 }
 driver = webdriver.Remote(
     command_executor='https://kaiwei_a9ewDd:MU9DK7auHeJgzUhkSdBx@hub-cloud.browserstack.com/wd/hub',
