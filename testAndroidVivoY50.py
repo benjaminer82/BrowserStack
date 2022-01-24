@@ -7,9 +7,9 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 desired_cap = {
  'browserName': 'Android',
- 'device': 'OnePlus 9',
+ 'device': 'Vivo Y50',
  'realMobile': 'true',
- 'os_version': '11.0',
+ 'os_version': '10.0',
  'name': 'Kai Vivo Y50 Test', # test name
  'build': 'Vivo Y50 Test Job' # CI/CD job or build name
 }
