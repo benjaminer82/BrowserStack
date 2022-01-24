@@ -22,19 +22,33 @@ try:
     WebDriverWait(driver, 10).until(EC.title_contains("StackDemo"))
 
     try:
-        assert "SDemo" in driver.title
+        assert "StackDemo" in driver.title
     except AssertionError:
         print('browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"assertion failure", "reason": "Page title wrong"}}')
 
     # Get text of a product - iPhone 12
     item_on_page =  WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="1"]/p'))).text
+
+    try:
+        assert "iPhone 11" in item_on_page
+    except AssertionError:
+        print('browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"assertion failure", "reason": "1st item not iPhone 12"}}')
+
+
     # Click the 'Add to cart' button if it is visible
-    WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="1"]/div[4]'))).click()
+#    WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="1"]/div[4]'))).click()
     # Check if the Cart pane is visible
     WebDriverWait(driver,10).until(EC.visibility_of_element_located((By.CLASS_NAME, "float-cart__content")))
     ## Get text of product in cart
     item_in_cart = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="__next"]/div/div/div[2]/div[2]/div[2]/div/div[3]/p[1]'))).text
     # Verify whether the product (iPhone 12) is added to cart
+
+    try:
+        assert item_in_cart in item_on_page
+    except AssertionError:
+        print('browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"assertion failure", "reason": "iPhone 12 hasn\'t been successfully added to the cart!"}}')
+
+    
     if item_on_page == item_in_cart:
         # Set the status of test as 'passed' or 'failed' based on the condition; if item is added to cart
         print('browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"passed", "reason": "iPhone 12 has been successfully added to the cart!"}}')
