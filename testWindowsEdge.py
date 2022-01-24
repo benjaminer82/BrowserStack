@@ -21,8 +21,10 @@ try:
     driver.get("https://bstackdemo.com/")
     WebDriverWait(driver, 10).until(EC.title_contains("StackDemo"))
 
-    assert "StackDemo" in driver.title
-
+    try:
+        assert "SDemo" in driver.title
+    except AssertionError:
+        driver.execute_script('browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"assertion failure", "reason": "Page title wrong"}}')
 
     # Get text of a product - iPhone 12
     item_on_page =  WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="1"]/p'))).text
