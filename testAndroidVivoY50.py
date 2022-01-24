@@ -10,8 +10,8 @@ desired_cap = {
  'device': 'OnePlus 9',
  'realMobile': 'true',
  'os_version': '11.0',
- 'name': 'Kai OnePlus 9 Test', # test name
- 'build': 'OnePlus 9 Test Job' # CI/CD job or build name
+ 'name': 'Kai Vivo Y50 Test', # test name
+ 'build': 'Vivo Y50 Test Job' # CI/CD job or build name
 }
 driver = webdriver.Remote(
     command_executor='https://kaiwei_a9ewDd:MU9DK7auHeJgzUhkSdBx@hub-cloud.browserstack.com/wd/hub',
