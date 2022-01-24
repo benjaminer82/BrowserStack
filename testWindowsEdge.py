@@ -19,9 +19,9 @@ driver = webdriver.Remote(
     desired_capabilities=desired_cap)
 try:
     driver.get("https://bstackdemo.com/")
-    title = WebDriverWait(driver, 10).until(EC.title_contains("StackDemo")).text
+    WebDriverWait(driver, 10).until(EC.title_contains("StackDemo"))
 
-    assert title == 'StackDemo'
+    assert EC.title_contains('SDemo2') == True
 
 
     # Get text of a product - iPhone 12
@@ -33,7 +33,6 @@ try:
     ## Get text of product in cart
     item_in_cart = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="__next"]/div/div/div[2]/div[2]/div[2]/div/div[3]/p[1]'))).text
     # Verify whether the product (iPhone 12) is added to cart
-    assert item_on_page == item_in_cart
     if item_on_page == item_in_cart:
         # Set the status of test as 'passed' or 'failed' based on the condition; if item is added to cart
         driver.execute_script('browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"passed", "reason": "iPhone 12 has been successfully added to the cart!"}}')
