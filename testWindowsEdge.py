@@ -19,9 +19,9 @@ driver = webdriver.Remote(
     desired_capabilities=desired_cap)
 try:
     driver.get("https://bstackdemo.com/")
-    WebDriverWait(driver, 10).until(EC.title_contains("StackDemo"))
+    title = WebDriverWait(driver, 10).until(EC.title_contains("StackDemo")).text
 
-    assert EC.title_is('SDemo2') != True
+    assert title == 'SDemo'
 
 
     # Get text of a product - iPhone 12
