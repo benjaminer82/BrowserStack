@@ -12,7 +12,7 @@ desired_cap = {
  'browser_version': 'latest',
  'os': 'Windows',
  'name': 'Kai Windows 10 Firefox Test', # test name
- 'build': 'Windows 10 Firefox Test Job' # CI/CD job or build name
+ 'build': 'Windows 10 Firefox Test' # CI/CD job or build name
 }
 driver = webdriver.Remote(
     command_executor='https://kaiwei_a9ewDd:MU9DK7auHeJgzUhkSdBx@hub-cloud.browserstack.com/wd/hub',

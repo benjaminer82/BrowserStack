@@ -11,7 +11,7 @@ desired_cap = {
  'realMobile': 'true',
  'os_version': '15',
  'name': 'Kai iPhone Test', # test name
- 'build': 'iPhone Test Job' # CI/CD job or build name
+ 'build': 'iPhone Test' # CI/CD job or build name
 }
 driver = webdriver.Remote(
     command_executor='https://kaiwei_a9ewDd:MU9DK7auHeJgzUhkSdBx@hub-cloud.browserstack.com/wd/hub',
