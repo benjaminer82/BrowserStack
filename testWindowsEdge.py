@@ -21,28 +21,25 @@ try:
     driver.get("https://bstackdemo.com/")
     WebDriverWait(driver, 10).until(EC.title_contains("StackDemo"))
 
+    # 1st assertion to test the title of the page
     try:
         assert "StackDemo" in driver.title
     except AssertionError:
         print('browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"assertion failure", "reason": "Page title wrong"}}')
 
-    # Get text of a product - iPhone 12
     item_on_page =  WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="1"]/p'))).text
 
+    # 2nd assertion to test if the 1st item on the page is an iPhone 12 item
     try:
-        assert "iPhone 11" in item_on_page
+        assert "iPhone 12" in item_on_page
     except AssertionError:
         print('browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"assertion failure", "reason": "1st item not iPhone 12"}}')
 
-
-    # Click the 'Add to cart' button if it is visible
-    WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="2"]/div[4]'))).click()
-    # Check if the Cart pane is visible
+    WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="1"]/div[4]'))).click()
     WebDriverWait(driver,10).until(EC.visibility_of_element_located((By.CLASS_NAME, "float-cart__content")))
-    ## Get text of product in cart
     item_in_cart = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="__next"]/div/div/div[2]/div[2]/div[2]/div/div[3]/p[1]'))).text
-    # Verify whether the product (iPhone 12) is added to cart
 
+    # 3rd assertion to test if the iPhone 12 item has been correctly added to the cart
     try:
         assert item_in_cart in item_on_page
     except AssertionError:
@@ -50,10 +47,9 @@ try:
 
     
     if item_on_page == item_in_cart:
-        # Set the status of test as 'passed' or 'failed' based on the condition; if item is added to cart
         print('browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"passed", "reason": "iPhone 12 has been successfully added to the cart!"}}')
 
 except NoSuchElementException:
     print('browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"failed", "reason": "Some elements failed to load"}}')
-# Stop the driver
+
 driver.quit() 
