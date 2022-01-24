@@ -11,8 +11,8 @@ desired_cap = {
  'browser': 'Chrome',
  'browser_version': 'latest',
  'os': 'OS X',
- 'name': 'BStack-[Python] Sample Test', # test name
- 'build': 'BStack Build Number 1' # CI/CD job or build name
+ 'name': 'Kai OSX Test', # test name
+ 'build': 'Test Job' # CI/CD job or build name
 }
 driver = webdriver.Remote(
 command_executor='https://kaiwei_a9ewDd:MU9DK7auHeJgzUhkSdBx@hub-cloud.browserstack.com/wd/hub',

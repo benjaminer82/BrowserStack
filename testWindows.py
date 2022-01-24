@@ -11,8 +11,8 @@ desired_cap = {
  'browser': 'Edge',
  'browser_version': 'latest',
  'os': 'Windows',
- 'name': 'BStack-[Python] Sample Test', # test name
- 'build': 'BStack Build Number 1' # CI/CD job or build name
+ 'name': 'Kai Windows Test', # test name
+ 'build': 'Windows Test Job' # CI/CD job or build name
 }
 driver = webdriver.Remote(
     command_executor='https://kaiwei_a9ewDd:MU9DK7auHeJgzUhkSdBx@hub-cloud.browserstack.com/wd/hub',
