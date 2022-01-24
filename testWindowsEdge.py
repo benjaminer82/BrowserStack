@@ -21,7 +21,7 @@ try:
     driver.get("https://bstackdemo.com/")
     WebDriverWait(driver, 10).until(EC.title_contains("StackDemo"))
 
-    assert "SDemo" in driver.title
+    assert "StackDemo" in driver.title
 
 
     # Get text of a product - iPhone 12
