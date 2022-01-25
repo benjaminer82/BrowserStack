@@ -2,27 +2,52 @@
 <p align="center">
 </p>
 
-> Test scripts setup to run on the automation service, BrowserStack. <br /> Can also be used directly through `Jenkins projects`.
+> This project contains 5 test scripts set up to run on the test automation platform, `BrowserStack`. 
+> <br /> Ready to be used directly through `Jenkins projects`.
+> <br />All five scripts have the same set of tests on a demo website to make sure it is running correctly. 
+<br /> There're `3 seperate assertions` in each script to test the following scenario
+
+| # | Assertion Scenario        | 
+|---|---------------------------|
+| 1 | Check page title          | 
+| 2 | Make sure the first item is an iPhone 12   |
+| 3 | Make sure the item has been correctly added into cart      | 
+
+
+
+Five test scripts were created to run separately on the following platforms & browsers to test the cross platform/browser suitability.
+
+| # | File Name                 | Platform  | Browser |
+|---|---------------------------|:---------:|-------------|
+| 1 | testOSXChrome.py          | Mac OSX   | Chrome |
+| 2 | testWindows10Firefox.py   | Window 10 | Firefox |
+| 3 | testWindows11Edge.py      | Windows 11| Edge |
+| 4 | testiOSiPadAir4.py        | iOS  | iPad default |
+| 5 | testiOSiPhone13.py        | iOS  | iPhone default |
+
+
 
 ## ✨ Demo Workflow
 
-Full process from `Jenkins Pipeline` to `BrowserStack Test Automation` with test scripts running in parralell:
-
-![image](https://user-images.githubusercontent.com/8535941/150889063-3a48435b-09b6-444c-9446-a1358fb335ef.png)
+Below is a demo for full process from executing a `Jenkins Pipeline` to testing jobs triggered on `BrowserStack Test Automation platform`.
+<br />All 5 test scripts running in `parallel`:
 
 <p align="center">
-  <img width="700" align="center" src="https://user-images.githubusercontent.com/8535941/150889063-3a48435b-09b6-444c-9446-a1358fb335ef.png" alt="demo"/>
+  <img width="800" align="center" src="https://user-images.githubusercontent.com/8535941/150890222-2b31550b-b54e-46c1-afa9-24b38b020f66.gif" alt="demo"/>
 </p>
+
+
 
 ## ✨ Jenkins Pipeline Configuration
 
-![Jenkins pipeline](https://user-images.githubusercontent.com/8535941/150889740-723949de-09f1-4ece-9287-a8af20640bfe.gif)
+The Jenkins pipeline configuration used for the demo above.
 
 <p align="center">
-  <img width="700" align="center" src="https://user-images.githubusercontent.com/8535941/150889740-723949de-09f1-4ece-9287-a8af20640bfe.gif" alt="Jenkins Pipeline Configuration"/>
+  <img width="800" align="center" src="https://user-images.githubusercontent.com/8535941/150889740-723949de-09f1-4ece-9287-a8af20640bfe.gif" alt="Jenkins Pipeline Configuration"/>
 </p>
 
-Example of `Jenkins Pipeline Script` with groovy:
+
+Example of `Jenkins Pipeline Script` with groovy:<br />
 
 ```groovy
 pipeline {
@@ -67,12 +92,11 @@ pipeline {
 }
 ```
 
+
 ## ✨ Individual Test on BrowserStack
 
-![individual test](https://user-images.githubusercontent.com/8535941/150889554-b69179be-b76f-4ab3-b5ea-b062986dbe8b.gif)
-
 <p align="center">
-  <img width="700" align="center" src="https://user-images.githubusercontent.com/8535941/150889554-b69179be-b76f-4ab3-b5ea-b062986dbe8b.gif" alt="Individual Test on BrowserStack"/>
+  <img width="800" align="center" src="https://user-images.githubusercontent.com/8535941/150889554-b69179be-b76f-4ab3-b5ea-b062986dbe8b.gif" alt="Individual Test on BrowserStack"/>
 </p>
 
 
