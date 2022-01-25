@@ -47,7 +47,7 @@ The Jenkins pipeline configuration used for the demo above.
 </p>
 
 
-Example of `Jenkins Pipeline Script` with groovy:<br />
+#### Example of `Jenkins Pipeline Script` with groovy:<br />
 
 ```groovy
 pipeline {
